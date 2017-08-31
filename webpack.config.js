@@ -1,24 +1,27 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: {
     index: "./src/app/App.js"
   },
   output: {
-    path: "./public/dist",
+    path: path.resolve(__dirname, "./public/dist"),
     filename: "[name].js",
     publicPath: "."
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js|jsx/,
-        loader: "babel",
-        exclude: /node_modules/,
-        query: {
-          presets: "es2015"
+        exclude: [
+          path.resolve(__dirname, "./node_modules")
+        ],
+        loader: "babel-loader",
+        options: {
+          presets: ["es2015", "react"]
         }
       },
       {
@@ -35,10 +38,10 @@ module.exports = {
       }
     ],
   },
-  devtool: "#cheap-source-map",
+  devtool: "source-map",
   plugins: [
       new ExtractTextPlugin("style/[name].css"),
-      new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
       new HTMLWebpackPlugin({
         template: 'src/index.html'
       })
