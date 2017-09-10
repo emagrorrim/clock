@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import Timer from '../clock/component/Timer';
+
 class App extends Component {
   render() {
     return (
       <div>
-        <Clock />
+        <Timer />
       </div>
     );
   }
