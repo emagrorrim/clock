@@ -13,6 +13,7 @@ app.get('/', (req, res, next) => {
   res.sendFile(path.resolve(__dirname, './public/dist/index.html'))
 })
 
-app.listen(8080, () => {
-  console.log("App listening port " + 8080);
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  console.log("App listening port " + port);
 });
