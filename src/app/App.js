@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Timer from '../clock/component/Timer';
+import Timer from '../timer/component/Timer';
 
 class App extends Component {
   render() {
