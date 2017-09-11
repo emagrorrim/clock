@@ -7,7 +7,7 @@
     "start": "node app.js",
     "test": "test",
     "wpw": "webpack -w",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
+    "heroku-postbuild": "npm install --dev && webpack -p --config ./webpack.config.js --progress"
   },
   "author": "",
   "license": "ISC",
