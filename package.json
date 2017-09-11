@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "test": "test",
-    "wpw": "webpack -w"
+    "wpw": "webpack -w",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "",
   "license": "ISC",
