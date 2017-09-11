@@ -1,6 +1,11 @@
 import CountDownModel from '../model/CountDownModel';
+import AudioPlayer from '../../player/AudioPlayer';
 
 export default class TimerController {
+  constructor() {
+    this.audioPlayer = new AudioPlayer();
+  }
+
   run(distance, tick) {
     let end = new Date().getTime() + distance;
     this.start(end, tick)
@@ -29,5 +34,6 @@ export default class TimerController {
 
   end() {
     clearInterval(this.timer);
+    this.audioPlayer.play();
   }
 }
