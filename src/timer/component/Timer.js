@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import TimingLabel from './TimerLabel';
+import ControlPanel from './ControlPanel';
+
 import TimerController from '../controller/TimerController';
 import CountDownModel from '../model/CountDownModel';
 
@@ -13,19 +15,34 @@ export default class Timer extends Component {
     }
   }
 
-  componentDidMount() {
+  _startTimer(millisecond) {
     let that = this;
-    this.timerController.run(10 * 1000, (countDown) => {
+    this.timerController.run(millisecond, (countDown) => {
       that.setState({
         displayedTime: countDown
       })
     });
   }
 
+  _stopTimer() {
+    this.timerController.stopTimer();
+  }
+
+  _resetTimer() {
+    this.setState({
+      displayedTime: new CountDownModel(0, 0, 0, 0)
+    })
+  }
+
   render() {
     return (
       <div className="darkBackground">
         <TimingLabel className="timingLabel" displayedTime={this.state.displayedTime} />
+        <ControlPanel 
+          startTimer={this._startTimer.bind(this)}
+          stopTimer={this._stopTimer.bind(this)}
+          resetTimer={this._resetTimer.bind(this)}
+        />
       </div>
     )
   }

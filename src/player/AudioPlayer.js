@@ -1,6 +1,7 @@
 export default class AudioPlayer {
   constructor() {
     this.defaultAudio = '/music/1.mp3'
+    this.currentAudio = undefined;
   }
 
   play(src) {
@@ -11,5 +12,13 @@ export default class AudioPlayer {
       audio = new Audio(src);
     }
     audio.play();
+    this.currentAudio = audio;
+  }
+
+  stop() {
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.currentTime = 0;
+    }
   }
 }

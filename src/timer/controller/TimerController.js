@@ -12,6 +12,7 @@ export default class TimerController {
   }
 
   start(end, tick) {
+    this.stopTimer()
     let that = this;
     this.timer = setInterval(() => {
       let start = new Date().getTime();
@@ -27,13 +28,26 @@ export default class TimerController {
 
       if (distance < 0) {
         tick(new CountDownModel(0, 0, 0, 0));
-        that.end();
+        that._end();
       }
     },10);
   }
 
-  end() {
+  _end() {
     clearInterval(this.timer);
-    this.audioPlayer.play();
+    this._startNotify()
+  }
+
+  _startNotify() {
+    if (this.audioPlayer) {
+      this.audioPlayer.play();
+    }
+  }
+
+  stopTimer() {
+    clearInterval(this.timer);
+    if (this.audioPlayer) {
+      this.audioPlayer.stop();
+    }
   }
 }
