@@ -49,16 +49,16 @@ export default class TimerLabel extends Component {
     }
     const displayedMillisecond = parseInt(millisecond / 10);
     if (displayedMillisecond < 10) {
-      return "0" + millisecond;
+      return "0" + displayedMillisecond;
     }
     return displayedMillisecond.toString();
   }
 
   render() {
     return (
-      <div>
-        <h2>{this._formatedTimeString()}</h2>  
-        <p>{"." + this._formatedMillisecond()}</p>
+      <div className="timingLabel">
+        <h2 className="time">{this._formatedTimeString()}</h2>  
+        <p className="time small">{"." + this._formatedMillisecond()}</p>
       </div>
     )
   }

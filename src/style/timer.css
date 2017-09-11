@@ -1,0 +1,87 @@
+.darkBackground {
+  background-color: black;
+}
+
+.timer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.timer h2 {
+  margin: 0;
+}
+
+.timer .timingLabel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.timingLabel p {
+  margin: 0;
+}
+
+.timingLabel .time {
+  font-size: 200px;
+}
+
+.timingLabel .small {
+  font-size: 100px;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-top: 50px;
+}
+
+.control .timeField {
+  display: flex;
+  justify-content: center;
+}
+
+.control .timeField .timeInput {
+  width: 30px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+}
+
+.control .timeControl {
+  display: flex;
+  justify-content: center;
+}
+
+.control .timeControl .timeBtn {
+  display: flex;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 30px 15px;
+}
+
+.control .timeControl .start {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  background-image: url(/images/icon-play.png);
+}
+
+.control .timeControl .stop {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  background-image: url(/images/icon-stop.png);
+}
+
+.control .timeControl .reset {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  background-image: url(/images/icon-refresh.png);
+}

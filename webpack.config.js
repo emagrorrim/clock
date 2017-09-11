@@ -24,18 +24,9 @@ module.exports = {
           presets: ["es2015", "react"]
         }
       },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-      },
-      {
-        test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/,
-        loader: 'url?limit=10000&name=fonts/[name].[ext]'
-      },
-      {
-        test: /\.(png|jpe?g|gif)(\?\S*)?$/,
-        loader: 'url?limit=10000&name=images/[name].[ext]'
-      }
+      { test: /\.css$/, loader: 'style-loader!css-loader'},
+      { test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/, loader: 'url?limit=10000&name=fonts/[name].[ext]' },
+      { test: /\.(png|jpe?g|gif)(\?\S*)?$/, loader: 'url?limit=10000&name=images/[name].[ext]' }
     ],
   },
   devtool: "source-map",

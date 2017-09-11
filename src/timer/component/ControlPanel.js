@@ -30,12 +30,16 @@ export default class ControlPanel extends Component {
 
   render() {
     return (
-      <div>
-        <input ref={ref=>{this.minuteField = ref}} defaultValue="0" />mins
-        <input ref={ref=>{this.secondField = ref}} defaultValue="0" />seconds
-        <button onClick={this._start.bind(this)}>start</button>
-        <button onClick={this._stop.bind(this)}>stop</button>
-        <button onClick={this._reset.bind(this)}>reset</button>
+      <div className="control">
+        <div className="timeField">
+          <input className="timeInput minute" ref={ref=>{this.minuteField = ref}} defaultValue="0" />mins
+          <input className="timeInput second" ref={ref=>{this.secondField = ref}} defaultValue="0" />seconds
+        </div>
+        <div className="timeControl">
+          <button className="timeBtn start" onClick={this._start.bind(this)}></button>
+          <button className="timeBtn stop" onClick={this._stop.bind(this)}></button>
+          <button className="timeBtn reset" onClick={this._reset.bind(this)}></button>
+        </div>
       </div>
     )
   }

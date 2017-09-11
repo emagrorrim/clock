@@ -6,6 +6,8 @@ import ControlPanel from './ControlPanel';
 import TimerController from '../controller/TimerController';
 import CountDownModel from '../model/CountDownModel';
 
+import '../../style/timer.css';
+
 export default class Timer extends Component {
   constructor(props) {
     super(props)
@@ -36,8 +38,8 @@ export default class Timer extends Component {
 
   render() {
     return (
-      <div className="darkBackground">
-        <TimingLabel className="timingLabel" displayedTime={this.state.displayedTime} />
+      <div className="timer darkBackground">
+        <TimingLabel displayedTime={this.state.displayedTime} />
         <ControlPanel 
           startTimer={this._startTimer.bind(this)}
           stopTimer={this._stopTimer.bind(this)}
