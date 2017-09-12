@@ -1,18 +1,11 @@
 export default class AudioPlayer {
   constructor() {
     this.defaultAudio = '/music/1.mp3'
-    this.currentAudio = undefined;
+    this.currentAudio = new Audio(this.defaultAudio);
   }
 
-  play(src) {
-    let audio = undefined;
-    if (src == undefined) {
-      audio = new Audio(this.defaultAudio)
-    } else {
-      audio = new Audio(src);
-    }
-    audio.play();
-    this.currentAudio = audio;
+  play() {
+    this.currentAudio.play();
   }
 
   stop() {

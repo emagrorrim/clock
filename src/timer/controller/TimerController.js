@@ -12,7 +12,9 @@ export default class TimerController {
   }
 
   start(end, tick) {
-    this.stopTimer()
+    this.stopTimer();
+    this.audioPlayer.play();
+    this.audioPlayer.stop();
     let that = this;
     this.timer = setInterval(() => {
       let start = new Date().getTime();
