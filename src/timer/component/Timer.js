@@ -10,7 +10,7 @@ import '../../style/timer.css';
 
 export default class Timer extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.timerController = new TimerController();
     this.state = {
       displayedTime: new CountDownModel(0, 0, 0, 0)

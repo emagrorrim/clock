@@ -70,18 +70,15 @@
 
 .control .timeControl .start {
   border: none;
-  background: rgba(0, 0, 0, 0);
-  background-image: url(/images/icon-play.png);
+  background: rgba(0, 0, 0, 0) url(/images/icon-play.png);
 }
 
 .control .timeControl .stop {
   border: none;
-  background: rgba(0, 0, 0, 0);
-  background-image: url(/images/icon-stop.png);
+  background: rgba(0, 0, 0, 0) url(/images/icon-stop.png);
 }
 
 .control .timeControl .reset {
   border: none;
-  background: rgba(0, 0, 0, 0);
-  background-image: url(/images/icon-refresh.png);
+  background: rgba(0, 0, 0, 0) url(/images/icon-refresh.png);
 }

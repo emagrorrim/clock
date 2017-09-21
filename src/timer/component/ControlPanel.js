@@ -36,9 +36,9 @@ export default class ControlPanel extends Component {
           <input className="timeInput second" ref={ref=>{this.secondField = ref}} defaultValue="0" />seconds
         </div>
         <div className="timeControl">
-          <button className="timeBtn start" onClick={this._start.bind(this)}></button>
-          <button className="timeBtn stop" onClick={this._stop.bind(this)}></button>
-          <button className="timeBtn reset" onClick={this._reset.bind(this)}></button>
+          <button className="timeBtn start" onClick={this._start.bind(this)}/>
+          <button className="timeBtn stop" onClick={this._stop.bind(this)}/>
+          <button className="timeBtn reset" onClick={this._reset.bind(this)}/>
         </div>
       </div>
     )

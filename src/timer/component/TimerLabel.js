@@ -14,13 +14,13 @@ export default class TimerLabel extends Component {
     })
   }
 
-  _formatedTimeString() {
-    const minute = this._formatedMinute();
-    const second = this._formatedSecond();
+  _formattedTimeString() {
+    const minute = this._formattedMinute();
+    const second = this._formattedSecond();
     return [minute, second].join(":");
   }
 
-  _formatedMinute() {
+  _formattedMinute() {
     const minute = parseInt(this.state.time.minute);
     if (minute < 0 || minute >= 60) {
       return "00";
@@ -31,7 +31,7 @@ export default class TimerLabel extends Component {
     return minute.toString();
   }
 
-  _formatedSecond() {
+  _formattedSecond() {
     const second = parseInt(this.state.time.second);
     if (second < 0 || second >= 60) {
       return "00";
@@ -42,7 +42,7 @@ export default class TimerLabel extends Component {
     return second.toString();
   }
 
-  _formatedMillisecond() {
+  _formattedMillisecond() {
     const millisecond = parseInt(this.state.time.millisecond);
     if (millisecond < 0 || millisecond >= 1000) {
       return "00";
@@ -57,8 +57,8 @@ export default class TimerLabel extends Component {
   render() {
     return (
       <div className="timingLabel">
-        <h2 className="time">{this._formatedTimeString()}</h2>  
-        <p className="time small">{"." + this._formatedMillisecond()}</p>
+        <h2 className="time">{this._formattedTimeString()}</h2>
+        <p className="time small">{"." + this._formattedMillisecond()}</p>
       </div>
     )
   }
