@@ -1,52 +1,40 @@
-.darkBackground {
-  background-color: black;
-}
-
 .timer {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: black;
   color: white;
 }
 
-.timer h2 {
-  margin: 0;
-}
-
-.timer .timingLabel {
+.timer .time {
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
-.timingLabel p {
-  margin: 0;
+.time .time-main {
+  font-size: 12rem;
 }
 
-.timingLabel .time {
-  font-size: 200px;
+.time .time-millisecond {
+  font-size: 6rem;
 }
 
-.timingLabel .small {
-  font-size: 100px;
-}
-
-.control {
+.timer .controller {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   margin-top: 50px;
 }
 
-.control .timeField {
+.controller .controller-time {
   display: flex;
   justify-content: center;
 }
 
-.control .timeField .timeInput {
+.controller-time .time-input {
   width: 30px;
   border: none;
   border-bottom: 1px solid white;
@@ -55,30 +43,28 @@
   text-align: center;
 }
 
-.control .timeControl {
+.controller .controller-panel {
   display: flex;
   justify-content: center;
 }
 
-.control .timeControl .timeBtn {
+.controller-panel .time-btn {
   display: flex;
   justify-content: center;
   width: 64px;
   height: 64px;
   margin: 30px 15px;
+  border: none;
 }
 
-.control .timeControl .start {
-  border: none;
+.controller-panel .start {
   background: rgba(0, 0, 0, 0) url(/images/icon-play.png);
 }
 
-.control .timeControl .stop {
-  border: none;
+.controller-panel .stop {
   background: rgba(0, 0, 0, 0) url(/images/icon-stop.png);
 }
 
-.control .timeControl .reset {
-  border: none;
+.controller-panel .reset {
   background: rgba(0, 0, 0, 0) url(/images/icon-refresh.png);
 }

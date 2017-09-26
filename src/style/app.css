@@ -1,8 +1,12 @@
-html, body, #app, .timer-container {
+html, body, #app {
   height: 100%;
 }
 
-html, body {
+html, body, ul, li, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style: none;
 }

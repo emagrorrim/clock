@@ -8,7 +8,7 @@ import '../style/app.css';
 class App extends Component {
   render() {
     return (
-      <Timer className="timer-container" />
+      <Timer />
     );
   }
 }

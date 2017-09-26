@@ -56,10 +56,13 @@ export default class TimerLabel extends Component {
 
   render() {
     return (
-      <div className="timingLabel">
-        <h2 className="time">{this._formattedTimeString()}</h2>
-        <p className="time small">{"." + this._formattedMillisecond()}</p>
+      <div className="time">
+        <h2 className="time-main">{this._formattedTimeString()}</h2>
+        <p className="time-millisecond">{"." + this._formattedMillisecond()}</p>
       </div>
     )
   }
 }
+// time
+  // time-main
+  // time-millisecond

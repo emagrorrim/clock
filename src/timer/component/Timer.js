@@ -38,7 +38,7 @@ export default class Timer extends Component {
 
   render() {
     return (
-      <div className="timer darkBackground">
+      <div className="timer">
         <TimingLabel displayedTime={this.state.displayedTime} />
         <ControlPanel 
           startTimer={this._startTimer.bind(this)}

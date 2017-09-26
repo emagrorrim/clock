@@ -9,8 +9,8 @@ export default class ControlPanel extends Component {
   }
 
   _start() {
-    const minute = parseInt(this.minuteField.value);
-    const second = parseInt(this.secondField.value);
+    const minute = parseInt(this.minuteField.value || 0);
+    const second = parseInt(this.secondField.value || 0);
     const millisecond = minute * 60 * 1000 + second * 1000;
     if (millisecond > 0) {
       this.startTimer(millisecond);
@@ -30,15 +30,15 @@ export default class ControlPanel extends Component {
 
   render() {
     return (
-      <div className="control">
-        <div className="timeField">
-          <input className="timeInput minute" ref={ref=>{this.minuteField = ref}} defaultValue="0" />mins
-          <input className="timeInput second" ref={ref=>{this.secondField = ref}} defaultValue="0" />seconds
+      <div className="controller">
+        <div className="controller-time">
+          <input className="time-input" ref={ref=>{this.minuteField = ref}} defaultValue="0" />mins
+          <input className="time-input" ref={ref=>{this.secondField = ref}} defaultValue="0" />seconds
         </div>
-        <div className="timeControl">
-          <button className="timeBtn start" onClick={this._start.bind(this)}/>
-          <button className="timeBtn stop" onClick={this._stop.bind(this)}/>
-          <button className="timeBtn reset" onClick={this._reset.bind(this)}/>
+        <div className="controller-panel">
+          <button className="time-btn start" onClick={this._start.bind(this)}/>
+          <button className="time-btn stop" onClick={this._stop.bind(this)}/>
+          <button className="time-btn reset" onClick={this._reset.bind(this)}/>
         </div>
       </div>
     )
