@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
 app.use(express.static('./public'));
 
 app.get('/', (req, res, next) => {
-  res.sendFile(path.resolve(__dirname, './public/dist/index.html'))
-})
+  res.sendFile(path.resolve(__dirname, './public/dist/index.html'));
+});
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
