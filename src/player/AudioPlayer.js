@@ -1,6 +1,6 @@
 export default class AudioPlayer {
   constructor() {
-    this.defaultAudio = '/music/1.mp3'
+    this.defaultAudio = '/music/marimba.mp3'
     this.currentAudio = new Audio(this.defaultAudio);
   }
 
